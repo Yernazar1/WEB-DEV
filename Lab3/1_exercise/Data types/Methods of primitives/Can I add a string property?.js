@@ -1,0 +1,10 @@
+//Try running it:
+
+let str = "Hello";
+
+str.test = 5; // (*)
+
+alert(str.test);
+//Depending on whether you have use strict or not, the result may be:
+//undefined (no strict mode)
+//An error (strict mode).

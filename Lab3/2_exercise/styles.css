@@ -1,0 +1,143 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #1f2937;
+}
+
+.topbar {
+    background: #000;
+    color: #fff;
+    padding: 8px 100px;   
+}
+
+
+.topbar__inner {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.topbar__title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.95;
+}
+
+.page {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 36px 0;
+}
+
+.todo {
+    width: min(700px, 100%);
+    margin: 0 auto; 
+}
+
+.todo__title {
+    margin: 0 0 16px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.todo__form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;   
+    margin-top: 20px; 
+    margin-bottom: 18px;
+}
+
+.todo__input {
+    width: 400px;    
+    height: 32px;     
+    padding: 0 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 3px;
+    outline: none;
+}
+
+.todo__input:focus {
+     border-color: aqua;
+}
+
+.todo__button {
+    height: 38px;
+    padding: 0 16px;
+    border: 1px solid rgb(44, 149, 240);
+    background: #337ab7;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.todo__button:hover { filter: brightness(0.9); }
+
+.todo__list {
+    list-style: none;
+    padding: 0;                 
+    margin: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.todo__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.todo__item:last-child { border-bottom: none; }
+
+.todo__left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    min-width: 0;
+}
+
+.todo__text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.todo__item--done .todo__text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.todo__delete {
+    border: none;
+    background: transparent;
+    margin-right: 10px;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 6px 8px;
+}
+
+.todo__delete:hover { filter: brightness(0.9); }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    }
