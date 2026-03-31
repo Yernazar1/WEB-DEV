@@ -1,0 +1,32 @@
+<article class="product-card">
+  <div class="image-wrapper">
+    <img [src]="selectedImage" [alt]="product.name" class="main-image" />
+  </div>
+
+  <div class="thumbs" *ngIf="product.images.length > 0">
+    <button
+      *ngFor="let img of product.images"
+      type="button"
+      class="thumb-button"
+      [class.active]="img === selectedImage"
+      (click)="selectImage(img)"
+    >
+      <img [src]="img" [alt]="product.name" />
+    </button>
+  </div>
+
+  <h2>{{ product.name }}</h2>
+  <p class="description">{{ product.description }}</p>
+  <p class="price">{{ product.price | number }} KZT</p>
+  <p class="rating" aria-label="Rating: {{ product.rating }} out of 5">
+    <span *ngFor="let star of ratingStars">{{ star }}</span>
+    <span class="rating-number">({{ product.rating }}/5)</span>
+  </p>
+
+  <div class="actions">
+    <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a>
+    <a [href]="telegramUrl" target="_blank" rel="noopener noreferrer">Share on Telegram</a>
+    <a [href]="product.link" target="_blank" rel="noopener noreferrer" class="ru-link">Open on Kaspi</a>
+  </div>
+</article>
+

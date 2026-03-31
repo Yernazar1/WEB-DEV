@@ -1,0 +1,21 @@
+<article class="product-item">
+  <div class="image-container">
+    <img [src]="product.image" [alt]="product.name" />
+  </div>
+  <div class="details">
+    <h3>{{ product.name }}</h3>
+    <p class="description">{{ product.description }}</p>
+    <p class="price">{{ product.price | number }} KZT</p>
+    <p class="rating">Рейтинг: {{ product.rating }} / 5</p>
+    <p class="likes">❤ {{ product.likes }}</p>
+    <div class="actions">
+      <button type="button" class="like" (click)="likeProduct()">Like</button>
+      <button type="button" class="delete" (click)="deleteProduct()">Delete</button>
+    </div>
+    <div class="share">
+      <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a [href]="telegramUrl" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a [href]="product.link" target="_blank" rel="noopener noreferrer">Kaspi</a>
+    </div>
+  </div>
+</article>

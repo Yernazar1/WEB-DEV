@@ -1,0 +1,31 @@
+.product-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.product-list h1 {
+  margin-bottom: 0.2rem;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: #61707a;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+@media (max-width: 800px) {
+  .product-list {
+    padding: 1rem;
+  }
+
+  .product-list h1 {
+    font-size: 1.5rem;
+  }
+}

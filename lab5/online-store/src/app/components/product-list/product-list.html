@@ -1,0 +1,23 @@
+<section class="product-list">
+  <div class="categories" *ngIf="categories.length > 0">
+    <button
+      *ngFor="let category of categories"
+      [class.active]="selectedCategoryId === category.id"
+      (click)="selectCategory(category.id)"
+    >
+      {{ category.name }}
+    </button>
+  </div>
+
+  <div *ngIf="displayProducts.length === 0" class="no-products">Нет доступных товаров</div>
+
+  <div class="grid" *ngIf="displayProducts.length > 0">
+    <app-product-item
+      *ngFor="let product of displayProducts"
+      [product]="product"
+      (delete)="onDelete($event)"
+      (liked)="onLiked($event)"
+    ></app-product-item>
+  </div>
+</section>
+
